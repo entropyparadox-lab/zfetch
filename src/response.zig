@@ -71,3 +71,34 @@ test "response status predicates and json deserialization" {
     try std.testing.expectEqualStrings("cycorld", parsed.value.username);
     try std.testing.expect(parsed.value.is_active);
 }
+
+test "response status code classification and error json handling" {
+    const allocator = std.testing.allocator;
+
+    const Dummy = struct { val: u32 };
+
+    // 1. Client Error (404)
+    var resp_404 = Response{
+        .allocator = allocator,
+        .status = .not_found,
+        .body = try allocator.dupe(u8, "{\"error\": \"not found\"}"),
+    };
+    defer resp_404.deinit();
+    try std.testing.expect(!resp_404.isSuccess());
+    try std.testing.expect(resp_404.isClientError());
+    try std.testing.expect(!resp_404.isServerError());
+
+    // 2. Server Error (500)
+    var resp_500 = Response{
+        .allocator = allocator,
+        .status = .internal_server_error,
+        .body = try allocator.dupe(u8, "Internal Server Error"),
+    };
+    defer resp_500.deinit();
+    try std.testing.expect(!resp_500.isSuccess());
+    try std.testing.expect(!resp_500.isClientError());
+    try std.testing.expect(resp_500.isServerError());
+
+    // 3. Malformed JSON returns error
+    try std.testing.expectError(error.SyntaxError, resp_500.json(Dummy));
+}
