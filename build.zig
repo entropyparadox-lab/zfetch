@@ -32,6 +32,7 @@ pub fn build(b: *std.Build) void {
         .name = "zfetch-example",
         .root_module = example_mod,
     });
+    b.installArtifact(example_exe);
 
     const run_example = b.addRunArtifact(example_exe);
     const example_step = b.step("run-example", "Run zfetch example application");

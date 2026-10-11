@@ -23,7 +23,11 @@ pub const Client = struct {
 
     pub fn ensureCaBundle(self: *Client) !void {
         if (!self.ca_scanned) {
-            try self.http_client.ca_bundle.rescan(self.allocator);
+            try self.http_client.ca_bundle.rescan(
+                self.allocator,
+                self.io,
+                std.Io.Clock.real.now(self.io),
+            );
             self.ca_scanned = true;
         }
     }

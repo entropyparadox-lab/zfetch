@@ -1,13 +1,13 @@
 # zfetch ⚡
 
-[![Zig Version](https://img.shields.io/badge/Zig-0.16.0%2B-orange.svg)](https://ziglang.org)
+[![Zig Version](https://img.shields.io/badge/Zig-0.17.0%2B-orange.svg)](https://ziglang.org)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Zero C Dependencies](https://img.shields.io/badge/Zero--C-Pure%20Zig-brightgreen.svg)]()
 [![Type-Safe JSON](https://img.shields.io/badge/Type--Safe-JSON%20REST-purple.svg)]()
 
-**Ergonomic, Type-Safe HTTP Client & REST Wrapper for Pure Zig (v0.16.0+)**
+**Ergonomic, Type-Safe HTTP Client & REST Wrapper for Pure Zig (v0.17.0+)**
 
-`zfetch` turns Zig 0.16.0's verbose `std.http.Client` boilerplate into clean, 1-line HTTP requests with automatic TLS CA bundle scanning, streaming response buffer management, Bearer token authorization, and typed JSON response deserialization.
+`zfetch` turns Zig's `std.http.Client` boilerplate into clean, 1-line HTTP requests with automatic TLS CA bundle scanning, streaming response buffer management, Bearer token authorization, and typed JSON response deserialization.
 
 ---
 
