@@ -11,17 +11,17 @@ pub const Response = struct {
     }
 
     pub fn isSuccess(self: Response) bool {
-        const code = @intFromEnum(self.status);
+        const code = @backingInt(self.status);
         return code >= 200 and code < 300;
     }
 
     pub fn isClientError(self: Response) bool {
-        const code = @intFromEnum(self.status);
+        const code = @backingInt(self.status);
         return code >= 400 and code < 500;
     }
 
     pub fn isServerError(self: Response) bool {
-        const code = @intFromEnum(self.status);
+        const code = @backingInt(self.status);
         return code >= 500 and code < 600;
     }
 

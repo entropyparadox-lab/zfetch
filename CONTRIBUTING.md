@@ -6,7 +6,8 @@ Thank you for contributing to `zfetch`! To maintain code quality and stability i
 
 ## 1. Compiler Versioning & Branch Strategy
 
-* **`main` (Protected)**: Targets **Official Stable Zig (`0.16.x`)**. All production releases (`vX.Y.Z`) are cut exclusively from `main`.
+* **`main` (Protected)**: Production releases (`vX.Y.Z`) are cut exclusively from `main`.
+* **`feat/zig-0.17-renewal`**: Tracks the pinned, unreleased Zig snapshot `0.17.0-dev.2085+5e36170b5` during the compatibility renewal.
 * **`zig-master`**: Tracks upstream `ziglang/zig` nightly builds.
 * **`feat/<name>` / `fix/<name>`**: Branch off `main` for stable changes.
 
