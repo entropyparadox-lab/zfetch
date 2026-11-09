@@ -1,11 +1,11 @@
 # zfetch ⚡
 
-[![Zig Version](https://img.shields.io/badge/Zig-0.17.0%2B-orange.svg)](https://ziglang.org)
+[![Zig Version](https://img.shields.io/badge/Zig-0.17.1%2B-orange.svg)](https://ziglang.org)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Zero C Dependencies](https://img.shields.io/badge/Zero--C-Pure%20Zig-brightgreen.svg)]()
 [![Type-Safe JSON](https://img.shields.io/badge/Type--Safe-JSON%20REST-purple.svg)]()
 
-**Ergonomic, Type-Safe HTTP Client & REST Wrapper for Pure Zig (v0.17.0+)**
+**Ergonomic, Type-Safe HTTP Client & REST Wrapper for Pure Zig (v0.17.1+)**
 
 `zfetch` turns Zig's `std.http.Client` boilerplate into clean, 1-line HTTP requests with automatic TLS CA bundle scanning, streaming response buffer management, Bearer token authorization, and typed JSON response deserialization.
 
@@ -28,7 +28,8 @@
 Add `zfetch` to your `build.zig.zon`:
 
 ```bash
-zig fetch --save https://github.com/entropyparadox-lab/zfetch/archive/refs/tags/v1.0.0.tar.gz
+# After the v1.1.1 tag is published:
+zig fetch --save https://github.com/entropyparadox-lab/zfetch/archive/refs/tags/v1.1.1.tar.gz
 ```
 
 In your `build.zig`:
@@ -75,6 +76,12 @@ pub fn main(init: std.process.Init) !void {
 ```
 
 ---
+
+## Development
+
+개발 및 Zig 0.17.1 검증 방법은 [한국어 개발 가이드](CONTRIBUTING.md#한국어-zig-0171-개발-가이드),
+변경 사항은 [CHANGELOG](CHANGELOG.md)를 참고하세요. 패키지 버전은 1.1.1이며,
+이 브랜치의 변경만으로 릴리스 태그가 생성되지는 않습니다.
 
 ## License
 
